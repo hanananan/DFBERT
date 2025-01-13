@@ -61,6 +61,7 @@ for num in range(100):
         user_message1 = truncated_text
         user_message2 = 'Based on the information provided in the post above, the task is to determine whether the issue described is indeed a bug in the tensorflow/tensorflow project itself. If the poster has used the bug label but the provided information does not clearly indicate that the problem is caused by the tensorflow/tensorflow project, it could be due to other reasons such as the poster\'s own code writing errors or compatibility issues with third-party libraries. Therefore, based on the above situation, outputting 1 indicates that the issue may not be a bug in the tensorflow/tensorflow project itself but may be caused by other reasons. Outputting 0 indicates that the issue is likely a bug in the tensorflow/tensorflow project itself. To standardize the output, simply output 0 or 1 without additional information.'
 
+        # You can change your model, such as gpt4
         completion = client.chat.completions.create(
             model="gpt-3.5-turbo",
             messages=chat_history + [{"role": "user", "content": user_message1}, {"role": "user", "content": user_message2}]
