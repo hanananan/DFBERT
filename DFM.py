@@ -15,7 +15,7 @@ def truncate_string(text, max_tokens=1400):
     else:
         return text
 
-#数据处理
+#data
 def read_csv_file(file_path):
     with open(file_path, 'r', newline='', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
@@ -29,14 +29,11 @@ def read_csv_file(file_path):
 
     return headers, data
 
-file_path = '.\data\modified_issueDataTensorflow_feature3.csv'  # 你的CSV文件路径
+file_path = '.\data\modified_issueDataTensorflow_feature3.csv'
 headers, data = read_csv_file(file_path)
 
-print("CSV文件的列标题：", headers)
-print("CSV文件的数据行数：", len(data))
-# print("CSV文件的前5行数据：")
-# for row in data[:5]:
-#     print(row[8])
+print("Column heading:", headers)
+print("Line number:", len(data))
 
 
 print('---------------------------------------------------------------------')
@@ -49,7 +46,7 @@ for num in range(100):
 
     client = OpenAI(
         base_url="https://api.xty.app/v1",
-        api_key="sk-otDhQQu5siwoeVxe5f45E472826e4a9688B84d770619C3C7",
+        api_key="......................",
         http_client=httpx.Client(
             base_url="https://api.xty.app/v1",
             follow_redirects=True,
